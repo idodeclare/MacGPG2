@@ -13,7 +13,7 @@ class LibgpgError < Formula
   
   def install
     ENV.j1
-    ENV.universal_binary if ARGV.build_universal? # build fat so wine can use it
+    ENV.universal_binary
     # It's necessary to add the -rpath to the LDFLAGS, otherwise
     # programs can't link to libraries using @rpath.
     ENV.prepend 'LDFLAGS', '-headerpad_max_install_names'
